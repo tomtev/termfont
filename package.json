@@ -1,0 +1,17 @@
+{
+  "name": "termtype",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "description": "Block-based text art generator for terminal and SVG.",
+  "bin": {
+    "termtype": "./bin/termtype.js"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "src",
+    "bin"
+  ]
+}
