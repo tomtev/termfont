@@ -12,22 +12,137 @@
 npm install termtype
 ```
 
-## CLI
+## Examples
+
+### Solid colors
+
+<img src="gallery/ex-hello-sans.svg" alt="Hello" />
 
 ```sh
-termtype "Hello" --color=cyan
-termtype "Hello World" --font=block --gradient=red,yellow
-termtype "Logo" --rainbow --shadow
-termtype "Icon" --svg --out=icon.svg
+termtype "Hello" --font=sans --color=white
 ```
 
-### Options
+<img src="gallery/ex-arcade.svg" alt="ARCADE" />
+
+```sh
+termtype "ARCADE" --font=block --color=lime
+```
+
+<img src="gallery/ex-quizai.svg" alt="Quiz.ai" />
+
+```sh
+termtype "Quiz.ai" --font=block --color=gold
+```
+
+<img src="gallery/ex-hack.svg" alt="hack" />
+
+```sh
+termtype "hack" --font=block --color=lime
+```
+
+### Gradients
+
+<img src="gallery/ex-sunset.svg" alt="sunset" />
+
+```sh
+termtype "sunset" --font=bold --gradient=orange,pink,purple
+```
+
+<img src="gallery/ex-neon.svg" alt="NEON" />
+
+```sh
+termtype "NEON" --font=block --gradient=purple,cyan,lime
+```
+
+<img src="gallery/ex-fire.svg" alt="fire" />
+
+```sh
+termtype "fire" --font=block --gradient=red,yellow
+```
+
+<img src="gallery/ex-ice.svg" alt="ice" />
+
+```sh
+termtype "ice" --font=block --gradient=white,cyan,blue
+```
+
+### Rainbow
+
+<img src="gallery/ex-rainbow.svg" alt="rainbow" />
+
+```sh
+termtype "rainbow" --font=bold --rainbow
+```
+
+### Per-word colors
+
+<img src="gallery/ex-opencode.svg" alt="opencode" />
+
+```sh
+termtype "open|code" --font=block --color=cyan,gray
+```
+
+Use `|` as a zero-width color separator (no space between words). Use commas to assign colors to words.
+
+### Effects
+
+<img src="gallery/ex-retro.svg" alt="RETRO" />
+
+```sh
+termtype "RETRO" --font=block --color=coral --shadow
+```
+
+<img src="gallery/ex-outline.svg" alt="outline" />
+
+```sh
+termtype "outline" --font=bold --color=cyan --outline
+```
+
+### Fonts
+
+<img src="gallery/ex-hello-sans.svg" alt="sans" />
+
+```sh
+termtype "Hello" --font=sans
+```
+
+<img src="gallery/ex-gold-serif.svg" alt="serif" />
+
+```sh
+termtype "GOLD" --font=serif --color=gold
+```
+
+<img src="gallery/ex-slim.svg" alt="slim" />
+
+```sh
+termtype "slim" --font=slim --color=pink
+```
+
+<img src="gallery/ex-narrow.svg" alt="narrow" />
+
+```sh
+termtype "NARROW" --font=narrow --color=violet
+```
+
+<img src="gallery/ex-arcade.svg" alt="block" />
+
+```sh
+termtype "ARCADE" --font=block --color=lime
+```
+
+| Font | Style | Width |
+|------|-------|-------|
+| `sans` | Clean default | 5px |
+| `serif` | Decorative serifs | 5px |
+| `slim` | Thin strokes | 5px |
+| `bold` | Heavy weight | 6px |
+| `narrow` | Condensed | 3px |
+| `block` | Chunky geometric | 7px |
+
+## CLI
 
 ```
 termtype <text> [options]
-
-Arguments:
-  <text>                Text to render (use quotes for spaces)
 
 Options:
   --color=<color>       Text color (name or hex, default: white)
@@ -48,41 +163,6 @@ Options:
   --out=<file>          Write output to file
   -h, --help            Show this help
 ```
-
-### Fonts
-
-| Font | Style | Width |
-|------|-------|-------|
-| `sans` | Clean default | 5px |
-| `serif` | Decorative serifs | 5px |
-| `slim` | Thin strokes | 5px |
-| `bold` | Heavy weight | 6px |
-| `narrow` | Condensed | 3px |
-| `block` | Chunky geometric | 7px |
-
-### Per-word colors
-
-Use commas to assign colors to words:
-
-```sh
-termtype "Hello World" --color=cyan,gold
-```
-
-Use `|` as a zero-width color separator (no space between words):
-
-```sh
-termtype "open|code" --color=cyan,gray
-```
-
-### SVG output
-
-SVGs render as flat pixel art on a transparent background -- ready to use on websites:
-
-```sh
-termtype "Logo" --svg --color=cyan --out=logo.svg
-```
-
-Same-color pixels are merged into single `<path>` elements for minimal file size.
 
 ## API
 
@@ -125,6 +205,14 @@ const svg = renderSVG(grid, {
 ### Named colors
 
 `white` `black` `red` `green` `blue` `yellow` `cyan` `magenta` `orange` `pink` `purple` `lime` `teal` `navy` `gold` `gray` `coral` `violet` `silver` `darkgray` `lightgray`
+
+## SVG output
+
+SVGs render as flat pixel art on a transparent background, ready to use on websites. Same-color pixels are merged into single `<path>` elements for minimal file size.
+
+```sh
+termtype "Logo" --svg --color=cyan --out=logo.svg
+```
 
 ## License
 
