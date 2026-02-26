@@ -9,7 +9,13 @@
 ## Install
 
 ```sh
-npm install termtype
+npm install @tomtev/termtype
+```
+
+Or run directly with npx:
+
+```sh
+npx @tomtev/termtype "Hello" --color=cyan
 ```
 
 ## Examples
@@ -167,7 +173,7 @@ Options:
 ## API
 
 ```ts
-import { composeText, renderTerminal, renderSVG, applyPadding, applyShadow } from "termtype";
+import { composeText, renderTerminal, renderSVG, applyPadding, applyShadow } from "@tomtev/termtype";
 
 const grid = composeText("Hello", { font: "block" });
 const padded = applyPadding(grid, 1);

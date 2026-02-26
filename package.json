@@ -1,9 +1,14 @@
 {
-  "name": "termtype",
+  "name": "@tomtev/termtype",
   "version": "0.1.0",
   "type": "module",
   "license": "MIT",
   "description": "Block-based text art generator for terminal and SVG.",
+  "keywords": ["text-art", "ascii-art", "pixel-art", "terminal", "svg", "cli", "ansi"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomtev/termtype.git"
+  },
   "bin": {
     "termtype": "./bin/termtype.js"
   },
