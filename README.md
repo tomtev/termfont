@@ -22,119 +22,102 @@ npx termfont "Hello" --color=cyan
 
 ### Solid colors
 
+```sh
+npx termfont "Hello" --font=sans --color=white --svg
+```
 <img src="gallery/ex-hello-sans.svg" alt="Hello" />
 
 ```sh
-npx termfont "Hello" --font=sans --color=white
+npx termfont "ARCADE" --font=block --color=lime --svg
 ```
-
 <img src="gallery/ex-arcade.svg" alt="ARCADE" />
 
 ```sh
-npx termfont "ARCADE" --font=block --color=lime
+npx termfont "Quiz.ai" --font=block --color=gold --svg
 ```
-
 <img src="gallery/ex-quizai.svg" alt="Quiz.ai" />
 
 ```sh
-npx termfont "Quiz.ai" --font=block --color=gold
+npx termfont "hack" --font=block --color=lime --svg
 ```
-
 <img src="gallery/ex-hack.svg" alt="hack" />
-
-```sh
-npx termfont "hack" --font=block --color=lime
-```
 
 ### Gradients
 
+```sh
+npx termfont "sunset" --font=bold --gradient=orange,pink,purple --svg
+```
 <img src="gallery/ex-sunset.svg" alt="sunset" />
 
 ```sh
-npx termfont "sunset" --font=bold --gradient=orange,pink,purple
+npx termfont "NEON" --font=block --gradient=purple,cyan,lime --svg
 ```
-
 <img src="gallery/ex-neon.svg" alt="NEON" />
 
 ```sh
-npx termfont "NEON" --font=block --gradient=purple,cyan,lime
+npx termfont "fire" --font=block --gradient=red,yellow --svg
 ```
-
 <img src="gallery/ex-fire.svg" alt="fire" />
 
 ```sh
-npx termfont "fire" --font=block --gradient=red,yellow
+npx termfont "ice" --font=block --gradient=white,cyan,blue --svg
 ```
-
 <img src="gallery/ex-ice.svg" alt="ice" />
-
-```sh
-npx termfont "ice" --font=block --gradient=white,cyan,blue
-```
 
 ### Rainbow
 
-<img src="gallery/ex-rainbow.svg" alt="rainbow" />
-
 ```sh
-npx termfont "rainbow" --font=bold --rainbow
+npx termfont "rainbow" --font=bold --rainbow --svg
 ```
+<img src="gallery/ex-rainbow.svg" alt="rainbow" />
 
 ### Per-word colors
 
-<img src="gallery/ex-opencode.svg" alt="opencode" />
-
 ```sh
-npx termfont "open|code" --font=block --color=cyan,gray
+npx termfont "open|code" --font=block --color=cyan,gray --svg
 ```
+<img src="gallery/ex-opencode.svg" alt="opencode" />
 
 Use `|` as a zero-width color separator (no space between words). Use commas to assign colors to words.
 
 ### Effects
 
+```sh
+npx termfont "RETRO" --font=block --color=coral --shadow --svg
+```
 <img src="gallery/ex-retro.svg" alt="RETRO" />
 
 ```sh
-npx termfont "RETRO" --font=block --color=coral --shadow
+npx termfont "outline" --font=bold --color=cyan --outline --svg
 ```
-
 <img src="gallery/ex-outline.svg" alt="outline" />
-
-```sh
-npx termfont "outline" --font=bold --color=cyan --outline
-```
 
 ### Fonts
 
+```sh
+npx termfont "Hello" --font=sans --svg
+```
 <img src="gallery/ex-hello-sans.svg" alt="sans" />
 
 ```sh
-npx termfont "Hello" --font=sans
+npx termfont "GOLD" --font=serif --color=gold --svg
 ```
-
 <img src="gallery/ex-gold-serif.svg" alt="serif" />
 
 ```sh
-npx termfont "GOLD" --font=serif --color=gold
+npx termfont "slim" --font=slim --color=pink --svg
 ```
-
 <img src="gallery/ex-slim.svg" alt="slim" />
 
 ```sh
-npx termfont "slim" --font=slim --color=pink
+npx termfont "NARROW" --font=narrow --color=violet --svg
 ```
-
 <img src="gallery/ex-narrow.svg" alt="narrow" />
 
 ```sh
-npx termfont "NARROW" --font=narrow --color=violet
+npx termfont "ARCADE" --font=block --color=lime --svg
 ```
-
 <img src="gallery/ex-arcade.svg" alt="block" />
-
-```sh
-npx termfont "ARCADE" --font=block --color=lime
-```
 
 | Font | Style | Width |
 |------|-------|-------|
@@ -145,35 +128,24 @@ npx termfont "ARCADE" --font=block --color=lime
 | `narrow` | Condensed | 3px |
 | `block` | Chunky geometric | 7px |
 
-### Sizes
-
-Terminal output supports three sizes:
-
-```sh
-# Small - compact half-block rendering
-npx termfont "Hello" --size=sm
-
-# Medium (default) - full block characters
-npx termfont "Hello" --size=md
-
-# Large - double-width, double-height blocks
-npx termfont "Hello" --size=lg
-```
-
 ### SVG output
 
 SVGs render as flat pixel art on a transparent background, ready to use on websites. Same-color pixels are merged into single `<path>` elements for minimal file size.
 
 ```sh
-# Save to file
 npx termfont "Logo" --svg --color=cyan --out=logo.svg
+```
+<img src="gallery/ex-logo-cyan.svg" alt="Logo" />
 
-# Custom pixel size
+```sh
 npx termfont "Big" --svg --font=block --color=gold --size-px=24 --out=big.svg
+```
+<img src="gallery/ex-big-gold.svg" alt="Big" />
 
-# Gradient SVG
+```sh
 npx termfont "Neon" --svg --font=block --gradient=purple,cyan --out=neon.svg
 ```
+<img src="gallery/ex-neon-gradient.svg" alt="Neon" />
 
 ## CLI
 
