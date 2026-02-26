@@ -92,7 +92,10 @@ if (flags.has("rainbow")) {
 
 // Apply padding
 const isSvg = flags.has("svg");
-const padAmount = isSvg ? 0 : parseInt(opts.padding || "1", 10);
+const needsOutline = flags.has("outline");
+const needsShadow = flags.has("shadow");
+const defaultPad = isSvg ? (needsOutline || needsShadow ? 1 : 0) : 1;
+const padAmount = parseInt(opts.padding || String(defaultPad), 10);
 if (padAmount > 0) {
   grid = applyPadding(grid, padAmount);
 }

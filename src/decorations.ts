@@ -52,21 +52,53 @@ export function applyShadow(grid: PixelGrid, dx = 1, dy = 1): ShadowResult {
 export function computeOutline(grid: PixelGrid): boolean[][] {
   const h = grid.length;
   const w = grid[0]?.length ?? 0;
+
+  // Flood-fill from edges to find outer background pixels
+  const outer: boolean[][] = Array.from({ length: h }, () =>
+    new Array(w).fill(false),
+  );
+  const queue: [number, number][] = [];
+
+  // Seed from all edge pixels that are empty
+  for (let y = 0; y < h; y++) {
+    if (!grid[y][0]) { outer[y][0] = true; queue.push([y, 0]); }
+    if (!grid[y][w - 1]) { outer[y][w - 1] = true; queue.push([y, w - 1]); }
+  }
+  for (let x = 0; x < w; x++) {
+    if (!grid[0][x] && !outer[0][x]) { outer[0][x] = true; queue.push([0, x]); }
+    if (!grid[h - 1][x] && !outer[h - 1][x]) { outer[h - 1][x] = true; queue.push([h - 1, x]); }
+  }
+
+  // BFS flood fill through empty pixels
+  while (queue.length > 0) {
+    const [cy, cx] = queue.shift()!;
+    for (const [ny, nx] of [[cy - 1, cx], [cy + 1, cx], [cy, cx - 1], [cy, cx + 1]]) {
+      if (ny >= 0 && ny < h && nx >= 0 && nx < w && !outer[ny][nx] && !grid[ny][nx]) {
+        outer[ny][nx] = true;
+        queue.push([ny, nx]);
+      }
+    }
+  }
+
+  // Outline = outer empty pixels adjacent (8-connected) to a filled pixel
   const outline: boolean[][] = Array.from({ length: h }, () =>
     new Array(w).fill(false),
   );
 
   for (let y = 0; y < h; y++) {
     for (let x = 0; x < w; x++) {
-      if (grid[y][x]) continue;
-      const neighbors = [
-        [y - 1, x], [y + 1, x], [y, x - 1], [y, x + 1],
-      ];
-      for (const [ny, nx] of neighbors) {
-        if (ny >= 0 && ny < h && nx >= 0 && nx < w && grid[ny][nx]) {
-          outline[y][x] = true;
-          break;
+      if (!outer[y][x]) continue;
+      for (let dy = -1; dy <= 1; dy++) {
+        for (let dx = -1; dx <= 1; dx++) {
+          if (dy === 0 && dx === 0) continue;
+          const ny = y + dy;
+          const nx = x + dx;
+          if (ny >= 0 && ny < h && nx >= 0 && nx < w && grid[ny][nx]) {
+            outline[y][x] = true;
+            break;
+          }
         }
+        if (outline[y][x]) break;
       }
     }
   }
