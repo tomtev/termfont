@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="gallery/logo.svg" alt="termtype" />
+  <img src="gallery/logo.svg" alt="termfont" />
 </p>
 
 <p align="center">
@@ -9,13 +9,13 @@
 ## Install
 
 ```sh
-npm install @tomtev/termtype
+npm install @tomtev/termfont
 ```
 
 Or run directly with npx:
 
 ```sh
-npx @tomtev/termtype "Hello" --color=cyan
+npx @tomtev/termfont "Hello" --color=cyan
 ```
 
 ## Examples
@@ -25,25 +25,25 @@ npx @tomtev/termtype "Hello" --color=cyan
 <img src="gallery/ex-hello-sans.svg" alt="Hello" />
 
 ```sh
-npx @tomtev/termtype "Hello" --font=sans --color=white
+npx @tomtev/termfont "Hello" --font=sans --color=white
 ```
 
 <img src="gallery/ex-arcade.svg" alt="ARCADE" />
 
 ```sh
-npx @tomtev/termtype "ARCADE" --font=block --color=lime
+npx @tomtev/termfont "ARCADE" --font=block --color=lime
 ```
 
 <img src="gallery/ex-quizai.svg" alt="Quiz.ai" />
 
 ```sh
-npx @tomtev/termtype "Quiz.ai" --font=block --color=gold
+npx @tomtev/termfont "Quiz.ai" --font=block --color=gold
 ```
 
 <img src="gallery/ex-hack.svg" alt="hack" />
 
 ```sh
-npx @tomtev/termtype "hack" --font=block --color=lime
+npx @tomtev/termfont "hack" --font=block --color=lime
 ```
 
 ### Gradients
@@ -51,25 +51,25 @@ npx @tomtev/termtype "hack" --font=block --color=lime
 <img src="gallery/ex-sunset.svg" alt="sunset" />
 
 ```sh
-npx @tomtev/termtype "sunset" --font=bold --gradient=orange,pink,purple
+npx @tomtev/termfont "sunset" --font=bold --gradient=orange,pink,purple
 ```
 
 <img src="gallery/ex-neon.svg" alt="NEON" />
 
 ```sh
-npx @tomtev/termtype "NEON" --font=block --gradient=purple,cyan,lime
+npx @tomtev/termfont "NEON" --font=block --gradient=purple,cyan,lime
 ```
 
 <img src="gallery/ex-fire.svg" alt="fire" />
 
 ```sh
-npx @tomtev/termtype "fire" --font=block --gradient=red,yellow
+npx @tomtev/termfont "fire" --font=block --gradient=red,yellow
 ```
 
 <img src="gallery/ex-ice.svg" alt="ice" />
 
 ```sh
-npx @tomtev/termtype "ice" --font=block --gradient=white,cyan,blue
+npx @tomtev/termfont "ice" --font=block --gradient=white,cyan,blue
 ```
 
 ### Rainbow
@@ -77,7 +77,7 @@ npx @tomtev/termtype "ice" --font=block --gradient=white,cyan,blue
 <img src="gallery/ex-rainbow.svg" alt="rainbow" />
 
 ```sh
-npx @tomtev/termtype "rainbow" --font=bold --rainbow
+npx @tomtev/termfont "rainbow" --font=bold --rainbow
 ```
 
 ### Per-word colors
@@ -85,7 +85,7 @@ npx @tomtev/termtype "rainbow" --font=bold --rainbow
 <img src="gallery/ex-opencode.svg" alt="opencode" />
 
 ```sh
-npx @tomtev/termtype "open|code" --font=block --color=cyan,gray
+npx @tomtev/termfont "open|code" --font=block --color=cyan,gray
 ```
 
 Use `|` as a zero-width color separator (no space between words). Use commas to assign colors to words.
@@ -95,13 +95,13 @@ Use `|` as a zero-width color separator (no space between words). Use commas to 
 <img src="gallery/ex-retro.svg" alt="RETRO" />
 
 ```sh
-npx @tomtev/termtype "RETRO" --font=block --color=coral --shadow
+npx @tomtev/termfont "RETRO" --font=block --color=coral --shadow
 ```
 
 <img src="gallery/ex-outline.svg" alt="outline" />
 
 ```sh
-npx @tomtev/termtype "outline" --font=bold --color=cyan --outline
+npx @tomtev/termfont "outline" --font=bold --color=cyan --outline
 ```
 
 ### Fonts
@@ -109,31 +109,31 @@ npx @tomtev/termtype "outline" --font=bold --color=cyan --outline
 <img src="gallery/ex-hello-sans.svg" alt="sans" />
 
 ```sh
-npx @tomtev/termtype "Hello" --font=sans
+npx @tomtev/termfont "Hello" --font=sans
 ```
 
 <img src="gallery/ex-gold-serif.svg" alt="serif" />
 
 ```sh
-npx @tomtev/termtype "GOLD" --font=serif --color=gold
+npx @tomtev/termfont "GOLD" --font=serif --color=gold
 ```
 
 <img src="gallery/ex-slim.svg" alt="slim" />
 
 ```sh
-npx @tomtev/termtype "slim" --font=slim --color=pink
+npx @tomtev/termfont "slim" --font=slim --color=pink
 ```
 
 <img src="gallery/ex-narrow.svg" alt="narrow" />
 
 ```sh
-npx @tomtev/termtype "NARROW" --font=narrow --color=violet
+npx @tomtev/termfont "NARROW" --font=narrow --color=violet
 ```
 
 <img src="gallery/ex-arcade.svg" alt="block" />
 
 ```sh
-npx @tomtev/termtype "ARCADE" --font=block --color=lime
+npx @tomtev/termfont "ARCADE" --font=block --color=lime
 ```
 
 | Font | Style | Width |
@@ -151,13 +151,13 @@ Terminal output supports three sizes:
 
 ```sh
 # Small - compact half-block rendering
-npx @tomtev/termtype "Hello" --size=sm
+npx @tomtev/termfont "Hello" --size=sm
 
 # Medium (default) - full block characters
-npx @tomtev/termtype "Hello" --size=md
+npx @tomtev/termfont "Hello" --size=md
 
 # Large - double-width, double-height blocks
-npx @tomtev/termtype "Hello" --size=lg
+npx @tomtev/termfont "Hello" --size=lg
 ```
 
 ### SVG output
@@ -166,19 +166,19 @@ SVGs render as flat pixel art on a transparent background, ready to use on websi
 
 ```sh
 # Save to file
-npx @tomtev/termtype "Logo" --svg --color=cyan --out=logo.svg
+npx @tomtev/termfont "Logo" --svg --color=cyan --out=logo.svg
 
 # Custom pixel size
-npx @tomtev/termtype "Big" --svg --font=block --color=gold --size-px=24 --out=big.svg
+npx @tomtev/termfont "Big" --svg --font=block --color=gold --size-px=24 --out=big.svg
 
 # Gradient SVG
-npx @tomtev/termtype "Neon" --svg --font=block --gradient=purple,cyan --out=neon.svg
+npx @tomtev/termfont "Neon" --svg --font=block --gradient=purple,cyan --out=neon.svg
 ```
 
 ## CLI
 
 ```
-termtype <text> [options]
+termfont <text> [options]
 
 Options:
   --color=<color>       Text color (name or hex, default: white)
@@ -211,13 +211,13 @@ import {
   applyShadow,
   computeOutline,
   parseColor,
-} from "@tomtev/termtype";
+} from "@tomtev/termfont";
 ```
 
 ### Terminal output
 
 ```ts
-import { composeText, renderTerminal, applyPadding } from "@tomtev/termtype";
+import { composeText, renderTerminal, applyPadding } from "@tomtev/termfont";
 
 const grid = composeText("Hello", { font: "block" });
 const padded = applyPadding(grid, 1);
@@ -231,7 +231,7 @@ console.log(lines.join("\n"));
 ### SVG output
 
 ```ts
-import { composeText, renderSVG } from "@tomtev/termtype";
+import { composeText, renderSVG } from "@tomtev/termfont";
 
 const grid = composeText("Hello", { font: "block" });
 const svg = renderSVG(grid, {
@@ -244,7 +244,7 @@ const svg = renderSVG(grid, {
 ### Gradients
 
 ```ts
-import { composeText, renderTerminal, applyPadding } from "@tomtev/termtype";
+import { composeText, renderTerminal, applyPadding } from "@tomtev/termfont";
 
 const grid = composeText("Fire", { font: "block" });
 const padded = applyPadding(grid, 1);
@@ -277,7 +277,7 @@ const lines = renderTerminal(padded, {
 ### Shadow
 
 ```ts
-import { composeText, renderTerminal, applyPadding, applyShadow } from "@tomtev/termtype";
+import { composeText, renderTerminal, applyPadding, applyShadow } from "@tomtev/termfont";
 
 let grid = composeText("Shadow", { font: "block" });
 grid = applyPadding(grid, 1);
@@ -294,7 +294,7 @@ console.log(lines.join("\n"));
 ### Outline
 
 ```ts
-import { composeText, renderTerminal, applyPadding, computeOutline } from "@tomtev/termtype";
+import { composeText, renderTerminal, applyPadding, computeOutline } from "@tomtev/termfont";
 
 let grid = composeText("Outline", { font: "bold" });
 grid = applyPadding(grid, 1);
@@ -310,7 +310,7 @@ console.log(lines.join("\n"));
 ### Per-word colors
 
 ```ts
-import { composeText, renderTerminal, applyPadding, getWordBoundaries, parseColor } from "@tomtev/termtype";
+import { composeText, renderTerminal, applyPadding, getWordBoundaries, parseColor } from "@tomtev/termfont";
 
 const text = "open|code";
 const fontName = "block";

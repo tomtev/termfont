@@ -812,7 +812,7 @@ for (const arg of args) {
   }
 }
 if (flags.has("help") || flags.has("h") || !input) {
-  console.log(`Usage: termtype <text> [options]
+  console.log(`Usage: termfont <text> [options]
 
 Generate block-based text art for terminal or SVG.
 
