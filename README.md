@@ -9,13 +9,13 @@
 ## Install
 
 ```sh
-npm install @tomtev/termfont
+npm install termfont
 ```
 
 Or run directly with npx:
 
 ```sh
-npx @tomtev/termfont "Hello" --color=cyan
+npx termfont "Hello" --color=cyan
 ```
 
 ## Examples
@@ -25,25 +25,25 @@ npx @tomtev/termfont "Hello" --color=cyan
 <img src="gallery/ex-hello-sans.svg" alt="Hello" />
 
 ```sh
-npx @tomtev/termfont "Hello" --font=sans --color=white
+npx termfont "Hello" --font=sans --color=white
 ```
 
 <img src="gallery/ex-arcade.svg" alt="ARCADE" />
 
 ```sh
-npx @tomtev/termfont "ARCADE" --font=block --color=lime
+npx termfont "ARCADE" --font=block --color=lime
 ```
 
 <img src="gallery/ex-quizai.svg" alt="Quiz.ai" />
 
 ```sh
-npx @tomtev/termfont "Quiz.ai" --font=block --color=gold
+npx termfont "Quiz.ai" --font=block --color=gold
 ```
 
 <img src="gallery/ex-hack.svg" alt="hack" />
 
 ```sh
-npx @tomtev/termfont "hack" --font=block --color=lime
+npx termfont "hack" --font=block --color=lime
 ```
 
 ### Gradients
@@ -51,25 +51,25 @@ npx @tomtev/termfont "hack" --font=block --color=lime
 <img src="gallery/ex-sunset.svg" alt="sunset" />
 
 ```sh
-npx @tomtev/termfont "sunset" --font=bold --gradient=orange,pink,purple
+npx termfont "sunset" --font=bold --gradient=orange,pink,purple
 ```
 
 <img src="gallery/ex-neon.svg" alt="NEON" />
 
 ```sh
-npx @tomtev/termfont "NEON" --font=block --gradient=purple,cyan,lime
+npx termfont "NEON" --font=block --gradient=purple,cyan,lime
 ```
 
 <img src="gallery/ex-fire.svg" alt="fire" />
 
 ```sh
-npx @tomtev/termfont "fire" --font=block --gradient=red,yellow
+npx termfont "fire" --font=block --gradient=red,yellow
 ```
 
 <img src="gallery/ex-ice.svg" alt="ice" />
 
 ```sh
-npx @tomtev/termfont "ice" --font=block --gradient=white,cyan,blue
+npx termfont "ice" --font=block --gradient=white,cyan,blue
 ```
 
 ### Rainbow
@@ -77,7 +77,7 @@ npx @tomtev/termfont "ice" --font=block --gradient=white,cyan,blue
 <img src="gallery/ex-rainbow.svg" alt="rainbow" />
 
 ```sh
-npx @tomtev/termfont "rainbow" --font=bold --rainbow
+npx termfont "rainbow" --font=bold --rainbow
 ```
 
 ### Per-word colors
@@ -85,7 +85,7 @@ npx @tomtev/termfont "rainbow" --font=bold --rainbow
 <img src="gallery/ex-opencode.svg" alt="opencode" />
 
 ```sh
-npx @tomtev/termfont "open|code" --font=block --color=cyan,gray
+npx termfont "open|code" --font=block --color=cyan,gray
 ```
 
 Use `|` as a zero-width color separator (no space between words). Use commas to assign colors to words.
@@ -95,13 +95,13 @@ Use `|` as a zero-width color separator (no space between words). Use commas to 
 <img src="gallery/ex-retro.svg" alt="RETRO" />
 
 ```sh
-npx @tomtev/termfont "RETRO" --font=block --color=coral --shadow
+npx termfont "RETRO" --font=block --color=coral --shadow
 ```
 
 <img src="gallery/ex-outline.svg" alt="outline" />
 
 ```sh
-npx @tomtev/termfont "outline" --font=bold --color=cyan --outline
+npx termfont "outline" --font=bold --color=cyan --outline
 ```
 
 ### Fonts
@@ -109,31 +109,31 @@ npx @tomtev/termfont "outline" --font=bold --color=cyan --outline
 <img src="gallery/ex-hello-sans.svg" alt="sans" />
 
 ```sh
-npx @tomtev/termfont "Hello" --font=sans
+npx termfont "Hello" --font=sans
 ```
 
 <img src="gallery/ex-gold-serif.svg" alt="serif" />
 
 ```sh
-npx @tomtev/termfont "GOLD" --font=serif --color=gold
+npx termfont "GOLD" --font=serif --color=gold
 ```
 
 <img src="gallery/ex-slim.svg" alt="slim" />
 
 ```sh
-npx @tomtev/termfont "slim" --font=slim --color=pink
+npx termfont "slim" --font=slim --color=pink
 ```
 
 <img src="gallery/ex-narrow.svg" alt="narrow" />
 
 ```sh
-npx @tomtev/termfont "NARROW" --font=narrow --color=violet
+npx termfont "NARROW" --font=narrow --color=violet
 ```
 
 <img src="gallery/ex-arcade.svg" alt="block" />
 
 ```sh
-npx @tomtev/termfont "ARCADE" --font=block --color=lime
+npx termfont "ARCADE" --font=block --color=lime
 ```
 
 | Font | Style | Width |
@@ -151,13 +151,13 @@ Terminal output supports three sizes:
 
 ```sh
 # Small - compact half-block rendering
-npx @tomtev/termfont "Hello" --size=sm
+npx termfont "Hello" --size=sm
 
 # Medium (default) - full block characters
-npx @tomtev/termfont "Hello" --size=md
+npx termfont "Hello" --size=md
 
 # Large - double-width, double-height blocks
-npx @tomtev/termfont "Hello" --size=lg
+npx termfont "Hello" --size=lg
 ```
 
 ### SVG output
@@ -166,13 +166,13 @@ SVGs render as flat pixel art on a transparent background, ready to use on websi
 
 ```sh
 # Save to file
-npx @tomtev/termfont "Logo" --svg --color=cyan --out=logo.svg
+npx termfont "Logo" --svg --color=cyan --out=logo.svg
 
 # Custom pixel size
-npx @tomtev/termfont "Big" --svg --font=block --color=gold --size-px=24 --out=big.svg
+npx termfont "Big" --svg --font=block --color=gold --size-px=24 --out=big.svg
 
 # Gradient SVG
-npx @tomtev/termfont "Neon" --svg --font=block --gradient=purple,cyan --out=neon.svg
+npx termfont "Neon" --svg --font=block --gradient=purple,cyan --out=neon.svg
 ```
 
 ## CLI
@@ -211,13 +211,13 @@ import {
   applyShadow,
   computeOutline,
   parseColor,
-} from "@tomtev/termfont";
+} from "termfont";
 ```
 
 ### Terminal output
 
 ```ts
-import { composeText, renderTerminal, applyPadding } from "@tomtev/termfont";
+import { composeText, renderTerminal, applyPadding } from "termfont";
 
 const grid = composeText("Hello", { font: "block" });
 const padded = applyPadding(grid, 1);
@@ -231,7 +231,7 @@ console.log(lines.join("\n"));
 ### SVG output
 
 ```ts
-import { composeText, renderSVG } from "@tomtev/termfont";
+import { composeText, renderSVG } from "termfont";
 
 const grid = composeText("Hello", { font: "block" });
 const svg = renderSVG(grid, {
@@ -244,7 +244,7 @@ const svg = renderSVG(grid, {
 ### Gradients
 
 ```ts
-import { composeText, renderTerminal, applyPadding } from "@tomtev/termfont";
+import { composeText, renderTerminal, applyPadding } from "termfont";
 
 const grid = composeText("Fire", { font: "block" });
 const padded = applyPadding(grid, 1);
@@ -277,7 +277,7 @@ const lines = renderTerminal(padded, {
 ### Shadow
 
 ```ts
-import { composeText, renderTerminal, applyPadding, applyShadow } from "@tomtev/termfont";
+import { composeText, renderTerminal, applyPadding, applyShadow } from "termfont";
 
 let grid = composeText("Shadow", { font: "block" });
 grid = applyPadding(grid, 1);
@@ -294,7 +294,7 @@ console.log(lines.join("\n"));
 ### Outline
 
 ```ts
-import { composeText, renderTerminal, applyPadding, computeOutline } from "@tomtev/termfont";
+import { composeText, renderTerminal, applyPadding, computeOutline } from "termfont";
 
 let grid = composeText("Outline", { font: "bold" });
 grid = applyPadding(grid, 1);
@@ -310,7 +310,7 @@ console.log(lines.join("\n"));
 ### Per-word colors
 
 ```ts
-import { composeText, renderTerminal, applyPadding, getWordBoundaries, parseColor } from "@tomtev/termfont";
+import { composeText, renderTerminal, applyPadding, getWordBoundaries, parseColor } from "termfont";
 
 const text = "open|code";
 const fontName = "block";
