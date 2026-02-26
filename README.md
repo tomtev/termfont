@@ -25,25 +25,25 @@ npx @tomtev/termtype "Hello" --color=cyan
 <img src="gallery/ex-hello-sans.svg" alt="Hello" />
 
 ```sh
-termtype "Hello" --font=sans --color=white
+npx @tomtev/termtype "Hello" --font=sans --color=white
 ```
 
 <img src="gallery/ex-arcade.svg" alt="ARCADE" />
 
 ```sh
-termtype "ARCADE" --font=block --color=lime
+npx @tomtev/termtype "ARCADE" --font=block --color=lime
 ```
 
 <img src="gallery/ex-quizai.svg" alt="Quiz.ai" />
 
 ```sh
-termtype "Quiz.ai" --font=block --color=gold
+npx @tomtev/termtype "Quiz.ai" --font=block --color=gold
 ```
 
 <img src="gallery/ex-hack.svg" alt="hack" />
 
 ```sh
-termtype "hack" --font=block --color=lime
+npx @tomtev/termtype "hack" --font=block --color=lime
 ```
 
 ### Gradients
@@ -51,25 +51,25 @@ termtype "hack" --font=block --color=lime
 <img src="gallery/ex-sunset.svg" alt="sunset" />
 
 ```sh
-termtype "sunset" --font=bold --gradient=orange,pink,purple
+npx @tomtev/termtype "sunset" --font=bold --gradient=orange,pink,purple
 ```
 
 <img src="gallery/ex-neon.svg" alt="NEON" />
 
 ```sh
-termtype "NEON" --font=block --gradient=purple,cyan,lime
+npx @tomtev/termtype "NEON" --font=block --gradient=purple,cyan,lime
 ```
 
 <img src="gallery/ex-fire.svg" alt="fire" />
 
 ```sh
-termtype "fire" --font=block --gradient=red,yellow
+npx @tomtev/termtype "fire" --font=block --gradient=red,yellow
 ```
 
 <img src="gallery/ex-ice.svg" alt="ice" />
 
 ```sh
-termtype "ice" --font=block --gradient=white,cyan,blue
+npx @tomtev/termtype "ice" --font=block --gradient=white,cyan,blue
 ```
 
 ### Rainbow
@@ -77,7 +77,7 @@ termtype "ice" --font=block --gradient=white,cyan,blue
 <img src="gallery/ex-rainbow.svg" alt="rainbow" />
 
 ```sh
-termtype "rainbow" --font=bold --rainbow
+npx @tomtev/termtype "rainbow" --font=bold --rainbow
 ```
 
 ### Per-word colors
@@ -85,7 +85,7 @@ termtype "rainbow" --font=bold --rainbow
 <img src="gallery/ex-opencode.svg" alt="opencode" />
 
 ```sh
-termtype "open|code" --font=block --color=cyan,gray
+npx @tomtev/termtype "open|code" --font=block --color=cyan,gray
 ```
 
 Use `|` as a zero-width color separator (no space between words). Use commas to assign colors to words.
@@ -95,13 +95,13 @@ Use `|` as a zero-width color separator (no space between words). Use commas to 
 <img src="gallery/ex-retro.svg" alt="RETRO" />
 
 ```sh
-termtype "RETRO" --font=block --color=coral --shadow
+npx @tomtev/termtype "RETRO" --font=block --color=coral --shadow
 ```
 
 <img src="gallery/ex-outline.svg" alt="outline" />
 
 ```sh
-termtype "outline" --font=bold --color=cyan --outline
+npx @tomtev/termtype "outline" --font=bold --color=cyan --outline
 ```
 
 ### Fonts
@@ -109,31 +109,31 @@ termtype "outline" --font=bold --color=cyan --outline
 <img src="gallery/ex-hello-sans.svg" alt="sans" />
 
 ```sh
-termtype "Hello" --font=sans
+npx @tomtev/termtype "Hello" --font=sans
 ```
 
 <img src="gallery/ex-gold-serif.svg" alt="serif" />
 
 ```sh
-termtype "GOLD" --font=serif --color=gold
+npx @tomtev/termtype "GOLD" --font=serif --color=gold
 ```
 
 <img src="gallery/ex-slim.svg" alt="slim" />
 
 ```sh
-termtype "slim" --font=slim --color=pink
+npx @tomtev/termtype "slim" --font=slim --color=pink
 ```
 
 <img src="gallery/ex-narrow.svg" alt="narrow" />
 
 ```sh
-termtype "NARROW" --font=narrow --color=violet
+npx @tomtev/termtype "NARROW" --font=narrow --color=violet
 ```
 
 <img src="gallery/ex-arcade.svg" alt="block" />
 
 ```sh
-termtype "ARCADE" --font=block --color=lime
+npx @tomtev/termtype "ARCADE" --font=block --color=lime
 ```
 
 | Font | Style | Width |
@@ -144,6 +144,36 @@ termtype "ARCADE" --font=block --color=lime
 | `bold` | Heavy weight | 6px |
 | `narrow` | Condensed | 3px |
 | `block` | Chunky geometric | 7px |
+
+### Sizes
+
+Terminal output supports three sizes:
+
+```sh
+# Small - compact half-block rendering
+npx @tomtev/termtype "Hello" --size=sm
+
+# Medium (default) - full block characters
+npx @tomtev/termtype "Hello" --size=md
+
+# Large - double-width, double-height blocks
+npx @tomtev/termtype "Hello" --size=lg
+```
+
+### SVG output
+
+SVGs render as flat pixel art on a transparent background, ready to use on websites. Same-color pixels are merged into single `<path>` elements for minimal file size.
+
+```sh
+# Save to file
+npx @tomtev/termtype "Logo" --svg --color=cyan --out=logo.svg
+
+# Custom pixel size
+npx @tomtev/termtype "Big" --svg --font=block --color=gold --size-px=24 --out=big.svg
+
+# Gradient SVG
+npx @tomtev/termtype "Neon" --svg --font=block --gradient=purple,cyan --out=neon.svg
+```
 
 ## CLI
 
@@ -173,21 +203,139 @@ Options:
 ## API
 
 ```ts
-import { composeText, renderTerminal, renderSVG, applyPadding, applyShadow } from "@tomtev/termtype";
+import {
+  composeText,
+  renderTerminal,
+  renderSVG,
+  applyPadding,
+  applyShadow,
+  computeOutline,
+  parseColor,
+} from "@tomtev/termtype";
+```
+
+### Terminal output
+
+```ts
+import { composeText, renderTerminal, applyPadding } from "@tomtev/termtype";
 
 const grid = composeText("Hello", { font: "block" });
 const padded = applyPadding(grid, 1);
 
-// Terminal output
 const lines = renderTerminal(padded, {
   colorMode: { type: "solid", color: [0, 220, 220] },
 });
 console.log(lines.join("\n"));
+```
 
-// SVG output
+### SVG output
+
+```ts
+import { composeText, renderSVG } from "@tomtev/termtype";
+
+const grid = composeText("Hello", { font: "block" });
 const svg = renderSVG(grid, {
   colorMode: { type: "rainbow" },
   pixelSize: 16,
+});
+// svg is a string ready to write to a file or embed in HTML
+```
+
+### Gradients
+
+```ts
+import { composeText, renderTerminal, applyPadding } from "@tomtev/termtype";
+
+const grid = composeText("Fire", { font: "block" });
+const padded = applyPadding(grid, 1);
+
+const lines = renderTerminal(padded, {
+  colorMode: {
+    type: "gradient",
+    from: [255, 0, 0],
+    to: [255, 255, 0],
+    direction: "horizontal",
+  },
+});
+console.log(lines.join("\n"));
+```
+
+### 3-stop gradient
+
+```ts
+const lines = renderTerminal(padded, {
+  colorMode: {
+    type: "gradient",
+    from: [128, 0, 255],
+    via: [0, 220, 220],
+    to: [50, 255, 50],
+    direction: "horizontal",
+  },
+});
+```
+
+### Shadow
+
+```ts
+import { composeText, renderTerminal, applyPadding, applyShadow } from "@tomtev/termtype";
+
+let grid = composeText("Shadow", { font: "block" });
+grid = applyPadding(grid, 1);
+const { grid: shadowed, shadowMask } = applyShadow(grid, 1, 1);
+
+const lines = renderTerminal(shadowed, {
+  colorMode: { type: "solid", color: [255, 100, 80] },
+  shadowMask,
+  shadowColor: [80, 80, 80],
+});
+console.log(lines.join("\n"));
+```
+
+### Outline
+
+```ts
+import { composeText, renderTerminal, applyPadding, computeOutline } from "@tomtev/termtype";
+
+let grid = composeText("Outline", { font: "bold" });
+grid = applyPadding(grid, 1);
+const outlineMask = computeOutline(grid);
+
+const lines = renderTerminal(grid, {
+  colorMode: { type: "solid", color: [0, 220, 220] },
+  outlineMask,
+});
+console.log(lines.join("\n"));
+```
+
+### Per-word colors
+
+```ts
+import { composeText, renderTerminal, applyPadding, getWordBoundaries, parseColor } from "@tomtev/termtype";
+
+const text = "open|code";
+const fontName = "block";
+const grid = composeText(text.replace(/\|/g, ""), { font: fontName });
+const padded = applyPadding(grid, 1);
+const boundaries = getWordBoundaries(text, { font: fontName });
+
+const lines = renderTerminal(padded, {
+  colorMode: {
+    type: "segments",
+    segments: [
+      { endX: boundaries[0] + 1, mode: { type: "solid", color: parseColor("cyan") } },
+      { endX: Infinity, mode: { type: "solid", color: parseColor("gray") } },
+    ],
+  },
+});
+console.log(lines.join("\n"));
+```
+
+### Compact mode
+
+```ts
+const lines = renderTerminal(padded, {
+  colorMode: { type: "solid", color: [255, 255, 255] },
+  compact: true, // half-block rendering, half the height
 });
 ```
 
@@ -205,20 +353,15 @@ const svg = renderSVG(grid, {
 { type: "rainbow" }
 
 // Per-segment
-{ type: "segments", segments: [{ endX: 20, mode: { type: "solid", color: [0, 220, 220] } }] }
+{ type: "segments", segments: [
+  { endX: 20, mode: { type: "solid", color: [0, 220, 220] } },
+  { endX: Infinity, mode: { type: "solid", color: [128, 128, 128] } },
+]}
 ```
 
 ### Named colors
 
 `white` `black` `red` `green` `blue` `yellow` `cyan` `magenta` `orange` `pink` `purple` `lime` `teal` `navy` `gold` `gray` `coral` `violet` `silver` `darkgray` `lightgray`
-
-## SVG output
-
-SVGs render as flat pixel art on a transparent background, ready to use on websites. Same-color pixels are merged into single `<path>` elements for minimal file size.
-
-```sh
-termtype "Logo" --svg --color=cyan --out=logo.svg
-```
 
 ## License
 
